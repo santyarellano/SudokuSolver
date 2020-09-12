@@ -13,6 +13,28 @@ header {
   padding-right: 3%;
 }
 
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+td {
+  border: 1px solid black;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+}
+
+#sudoku_table {
+  margin-top: 10vh;
+  border-radius: 25px;
+  border-collapse: separate;
+  border: solid black 1px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
 .nav_btn {
   margin-left: 3vw;
   height: fit-content;
