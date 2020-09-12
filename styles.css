@@ -3,5 +3,15 @@ body {
 }
 
 header {
-  background-color: yellow;
+  background-color: rgb(58, 58, 58);
+  color: aliceblue;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 1%;
+}
+
+.nav_btn {
+  margin-left: 3vw;
+  height: fit-content;
 }
