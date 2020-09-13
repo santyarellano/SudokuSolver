@@ -2,6 +2,8 @@
 let sudokuTable = document.getElementById("sudoku_table");
 let generateBtn = document.getElementById("generate_button");
 let solveBtn = document.getElementById("solve_button");
+var slider = document.getElementById("difficulty_range");
+var output = document.getElementById("difficulty_txt");
 
 // generate empty table
 for (let row = 0; row < 9; row++) {
@@ -14,6 +16,13 @@ for (let row = 0; row < 9; row++) {
   }
   sudokuTable.appendChild(tr);
 }
+
+// Difficulty slider
+output.innerHTML = slider.value;
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+  output.innerHTML = this.value;
+};
 
 // generate random sudoku
 generateBtn.onclick = function () {
@@ -29,7 +38,7 @@ generateBtn.onclick = function () {
   }
 
   // Fill HTML (with animation)
-  let difficulty = 2;
+  let difficulty = slider.value;
   let timeDelay = 0;
   availableNums = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   let shift = [];
@@ -52,6 +61,7 @@ generateBtn.onclick = function () {
   }
 };
 
+// solve sudoku
 solveBtn.onclick = function () {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
@@ -72,7 +82,5 @@ function GetRandIndex(arr) {
 
 function RandByDiff(difficulty) {
   let r = GetRandomInt(10) + 1;
-  /*if (r > difficulty) return true;
-  return false;*/
   return r > difficulty ? true : false;
 }
