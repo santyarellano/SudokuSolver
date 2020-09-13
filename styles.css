@@ -50,9 +50,10 @@ table td {
   padding: 8px;
   border: 1.5px solid #656363;
   text-align: center;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   transition-duration: 0.4s;
+  font-size: 1.5rem;
 }
 
 @keyframes anim {
