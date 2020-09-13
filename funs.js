@@ -18,15 +18,10 @@ for (let row = 0; row < 9; row++) {
 generateBtn.onclick = function () {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
-      animateCell(i, j);
+      let cell = sudokuTable.rows[i].cells[j];
+      cell.className = "active";
     }
   }
 };
 
-//animateCell(1, 1);
-
 //============= FUNCTIONS ==================
-function animateCell(row, col) {
-  let cell = sudokuTable.rows[row].cells[col];
-  cell.className = "active";
-}
