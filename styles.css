@@ -34,7 +34,7 @@ main {
 
 table {
   display: table;
-  border: 2px solid #444;
+  border: 2px solid rgb(0, 0, 0);
   border-collapse: collapse;
   position: relative;
 }
@@ -48,17 +48,23 @@ table tr {
 table td {
   display: table-cell;
   padding: 8px;
-  border: 1px solid #ff0000;
+  border: 1.5px solid #656363;
   text-align: center;
   width: 3rem;
   height: 3rem;
+  transition-duration: 0.4s;
+}
+
+table td:hover {
+  border: 3px solid rgb(0, 0, 0);
+  background-color: rgb(156, 198, 213);
 }
 
 table td:nth-child(3),
 table td:nth-child(6) {
-  border-right: 5px solid #555;
+  border-right: 5px solid rgb(40, 40, 40);
 } /*vertical*/
 table tr:nth-child(3) td,
 table tr:nth-child(6) td {
-  border-bottom: 5px solid #555;
+  border-bottom: 5px solid rgb(40, 40, 40);
 } /*horizontal*/
