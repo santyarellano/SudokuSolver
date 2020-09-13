@@ -1,6 +1,7 @@
 // document elements
 let sudokuTable = document.getElementById("sudoku_table");
 let generateBtn = document.getElementById("generate_button");
+let solveBtn = document.getElementById("solve_button");
 
 // generate empty table
 for (let row = 0; row < 9; row++) {
@@ -20,6 +21,15 @@ generateBtn.onclick = function () {
     for (let j = 0; j < 9; j++) {
       let cell = sudokuTable.rows[i].cells[j];
       cell.className = "active";
+    }
+  }
+};
+
+solveBtn.onclick = function () {
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      let cell = sudokuTable.rows[i].cells[j];
+      cell.className = "";
     }
   }
 };
