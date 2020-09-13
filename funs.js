@@ -28,7 +28,8 @@ generateBtn.onclick = function () {
     availableNums.splice(index, 1);
   }
 
-  // animation
+  // Fill HTML (with animation)
+  let difficulty = 2;
   let timeDelay = 0;
   availableNums = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   let shift = [];
@@ -36,15 +37,15 @@ generateBtn.onclick = function () {
     let index = GetRandIndex(availableNums);
     shift.push(availableNums[index]);
     availableNums.splice(index, 1);
-    console.log(availableNums);
     for (let j = 0; j < 9; j++) {
       setTimeout(() => {
         let cell = sudokuTable.rows[i].cells[j];
         cell.className = "active";
         setTimeout(() => {
-          cell.innerHTML = row[(j + shift[i]) % 9];
+          if (RandByDiff(difficulty)) cell.innerHTML = row[(j + shift[i]) % 9];
+          else cell.innerHTML = " ";
           cell.className = "";
-        }, 400);
+        }, 500);
       }, timeDelay);
       timeDelay += 50;
     }
@@ -61,6 +62,17 @@ solveBtn.onclick = function () {
 };
 
 //============= FUNCTIONS ==================
+function GetRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function GetRandIndex(arr) {
-  return Math.floor(Math.random() * arr.length);
+  return GetRandomInt(arr.length);
+}
+
+function RandByDiff(difficulty) {
+  let r = GetRandomInt(10) + 1;
+  /*if (r > difficulty) return true;
+  return false;*/
+  return r > difficulty ? true : false;
 }
